@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class door : MonoBehaviour
 {
+    AudioSource door2;
     public Camera_Follow follow;
     // Start is called before the first frame update
     void Start()
     {
-        
+        door2 = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame

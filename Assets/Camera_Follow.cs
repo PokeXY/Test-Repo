@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.Universal;
 
 public class Camera_Follow : MonoBehaviour
 {
-
+    AudioSource door2;
     public Transform target;
     public float smoothSpeed = 0.125f;
     public Vector3 offset;
@@ -29,6 +29,7 @@ public class Camera_Follow : MonoBehaviour
         ammo3.SetActive(true);
         ammo2.SetActive(true);
         ammo1.SetActive(true);
+        door2 = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -77,6 +78,7 @@ public class Camera_Follow : MonoBehaviour
 
     public void keycardHint()
     {
+        door2.Play();
         StartCoroutine(TemporarilyDeactivate(0.25f));
     }
 
