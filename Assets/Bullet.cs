@@ -10,6 +10,14 @@ public class Bullet : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Player")
+        {
+            //Calls Game Over
+        }
         GameObject effect = Instantiate(hitEffect, transform.position, Quaternion.identity);
         Destroy(effect, hitEffectTime);
         Destroy(gameObject);
