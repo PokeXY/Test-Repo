@@ -63,6 +63,8 @@
     <Compile Include="Assets\Camera_Follow.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Shooting.cs" />
+    <Compile Include="Assets\door.cs" />
+    <Compile Include="Assets\Engine.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

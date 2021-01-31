@@ -8,6 +8,7 @@ public class Shooting : MonoBehaviour
     public Transform firePoint;
     public GameObject bulletPrefab;
     public GameObject mainCamera;
+    public Camera_Follow follow;
 
     public float bulletForce = 20f;
     public float ammo = 3f;
@@ -23,8 +24,9 @@ public class Shooting : MonoBehaviour
         if (Input.GetButtonDown("Fire1") && ammo > 0f)
         {
             Shoot();
-            ammo -= 1;
+            ammo -= 1f;
             bullet.Play();
+            follow.ammoUpdate();
         }
     }
 

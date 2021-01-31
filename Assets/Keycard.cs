@@ -22,13 +22,10 @@ public class Keycard : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        follow.keycardUpdate();
-        Destroy(gameObject);
         if (collision.gameObject.tag == "Player")
         {
-            
+            follow.keycardUpdate();
+            Destroy(gameObject);
         }
-
-
     }
 }

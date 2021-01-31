@@ -16,7 +16,8 @@ public class Camera_Follow : MonoBehaviour
     public GameObject keycard2;
     public float ammos;
     public float keycards;
-
+    public float timer = 0f;
+    public bool ifKeycardHint;
 
 
     void Start()
@@ -28,6 +29,14 @@ public class Camera_Follow : MonoBehaviour
         ammo3.SetActive(true);
         ammo2.SetActive(true);
         ammo1.SetActive(true);
+    }
+
+    void Update()
+    {
+        if (timer > 0f)
+        {
+
+        }
     }
 
     void LateUpdate()
@@ -64,5 +73,23 @@ public class Camera_Follow : MonoBehaviour
             keycard1.SetActive(true);
         }  
         keycards += 1f;
+    }
+
+    public void keycardHint()
+    {
+        StartCoroutine(TemporarilyDeactivate(0.25f));
+    }
+
+    private IEnumerator TemporarilyDeactivate(float duration)
+    {
+        for (int i = 0; i < 4; i++)
+        {
+            keycard2.SetActive(true);
+            keycard1.SetActive(true);
+            yield return new WaitForSeconds(duration);
+            keycard2.SetActive(false);
+            keycard1.SetActive(false);
+            yield return new WaitForSeconds(duration);
+        }
     }
 }
