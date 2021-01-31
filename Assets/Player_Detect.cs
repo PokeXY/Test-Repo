@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Player_Detect : MonoBehaviour
 {
+    AudioSource enemyBullet;
     public GameObject player;
     public GameObject enemy;
     public Rigidbody2D rb;
@@ -38,6 +39,7 @@ public class Player_Detect : MonoBehaviour
 
     void Start()
     {
+        enemyBullet = GetComponent<AudioSource>();
         target = start;
         targetV2 = new Vector2(start.position.x, start.position.y);
     }
@@ -70,6 +72,7 @@ public class Player_Detect : MonoBehaviour
                 {
                     Shoot();
                     fireCountdown = 1f / fireRate;
+                    enemyBullet.Play();
                 }
                 fireCountdown -= Time.deltaTime;
 

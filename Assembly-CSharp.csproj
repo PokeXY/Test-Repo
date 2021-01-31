@@ -53,13 +53,16 @@
     <UnityVersion>2020.2.2f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Patrol1.cs" />
+    <Compile Include="Assets\Keycard.cs" />
     <Compile Include="Assets\Player_Movement.cs" />
+    <Compile Include="Assets\GameOverSceneSwitch.cs" />
     <Compile Include="Assets\Bullet.cs" />
     <Compile Include="Assets\Player_Detect.cs" />
+    <Compile Include="Assets\SceneChange.cs" />
     <Compile Include="Assets\Camera_Follow.cs" />
     <Compile Include="Assets\Explosion.cs" />
     <Compile Include="Assets\Shooting.cs" />
-    <Compile Include="Assets\Patrol1.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

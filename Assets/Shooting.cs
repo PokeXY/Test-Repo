@@ -4,11 +4,18 @@ using UnityEngine;
 
 public class Shooting : MonoBehaviour
 {
+    AudioSource bullet;
     public Transform firePoint;
     public GameObject bulletPrefab;
+    public GameObject mainCamera;
 
     public float bulletForce = 20f;
     public float ammo = 3f;
+
+    private void Start()
+    {
+        bullet = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -17,6 +24,7 @@ public class Shooting : MonoBehaviour
         {
             Shoot();
             ammo -= 1;
+            bullet.Play();
         }
     }
 
